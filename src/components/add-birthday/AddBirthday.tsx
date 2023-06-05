@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Birthday from "../../models/Birthday";
+import "./styles.css"
 
 interface AddBirthdayProps {
   saveBirthday: (newBirthday: Birthday) => void;
@@ -30,19 +31,18 @@ const AddBirthday = ({ saveBirthday }: AddBirthdayProps) => {
 
   return (
     <div>
-      <h2>Add a new birthday</h2>
+      <h2 className="form-bold">Add a new birthday:</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-name">
           <label htmlFor="personName">Name: </label>
           <input type="text" id="personName" required ref={personNameRef} />
         </div>
-        <br />
         <div>
           <label htmlFor="date">Date: </label>
           <input type="date" id="date" required ref={dateRef} />
         </div>
         <br />
-        <button type="submit">Add</button>
+        <button>Add</button>
       </form>
     </div>
   );
