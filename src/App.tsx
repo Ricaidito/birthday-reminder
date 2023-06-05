@@ -41,6 +41,7 @@ const App = () => {
         birthdays={birthdays}
         deleteBirthdaybyId={deleteBirthdaybyId}
       />
+      <br />
       <button onClick={deleteAllBirthdays}>Delete all birthdays</button>
     </div>
   );
