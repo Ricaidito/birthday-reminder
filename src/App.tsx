@@ -20,6 +20,14 @@ const App = () => {
     );
   };
 
+  const deleteBirthdaybyId = (birthdayId: string) => {
+    const newBirthdays = birthdays.filter(
+      birthday => birthday.id !== birthdayId
+    );
+    setBirthdays(newBirthdays);
+    localStorage.setItem("birthdays", JSON.stringify(newBirthdays));
+  };
+
   const deleteAllBirthdays = () => {
     setBirthdays([]);
     localStorage.setItem("birthdays", JSON.stringify([]));
@@ -29,7 +37,10 @@ const App = () => {
     <div>
       <h1>Birthday reminder</h1>
       <AddBirthday saveBirthday={saveBirthday} />
-      <BirthdayList birthdays={birthdays} />
+      <BirthdayList
+        birthdays={birthdays}
+        deleteBirthdaybyId={deleteBirthdaybyId}
+      />
       <button onClick={deleteAllBirthdays}>Delete all birthdays</button>
     </div>
   );
