@@ -32,9 +32,9 @@ const AddBirthday = ({ saveBirthday }: AddBirthdayProps) => {
     <div>
       <h2>Add a new birthday</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="personName">Name</label>
+        <label htmlFor="personName">Name:</label>
         <input type="text" id="personName" required ref={personNameRef} />
-        <label htmlFor="date">Date</label>
+        <label htmlFor="date">Date:</label>
         <input type="date" id="date" required ref={dateRef} />
         <button type="submit">Add</button>
       </form>
