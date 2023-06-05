@@ -1,5 +1,6 @@
 import Birthday from "../../models/Birthday";
-import "./styles.css"
+import BirthdayCard from "../birthday-card/BirthdayCard";
+import "./BirthdayList.css";
 
 interface BirthdayListProps {
   birthdays: Birthday[];
@@ -9,22 +10,20 @@ interface BirthdayListProps {
 const BirthdayList = ({ birthdays, deleteBirthdaybyId }: BirthdayListProps) => {
   if (birthdays.length === 0) {
     return (
-      <p className="bd-empty">
-        Nothing to see here. Try to add a birthday!
-      </p>
+      <div className="p-4">
+        <p className="bd-empty">Nothing to see here. Try to add a birthday!</p>
+      </div>
     );
   }
 
   return (
     <div>
       {birthdays.map(birthday => (
-        <div key={birthday.id} className="bd-card">
-          <p className="bd-para bd-name">{birthday.personName}</p>
-          <p className="bd-para margin">Birthday: {birthday.date}</p>
-          <button className="bd-btn" onClick={() => deleteBirthdaybyId(birthday.id)}>
-            Delete
-          </button>
-        </div>
+        <BirthdayCard
+          key={birthday.id}
+          birthday={birthday}
+          deleteBirthdaybyId={deleteBirthdaybyId}
+        />
       ))}
     </div>
   );

@@ -35,14 +35,15 @@ const App = () => {
 
   return (
     <div>
-      <h1>Birthday reminder</h1>
+      <h1>Birthday Reminder 🎂</h1>
       <AddBirthday saveBirthday={saveBirthday} />
       <BirthdayList
         birthdays={birthdays}
         deleteBirthdaybyId={deleteBirthdaybyId}
       />
-      <br />
-      <button onClick={deleteAllBirthdays}>Delete all birthdays</button>
+      <button className="m-4 hover:bg-red-500" onClick={deleteAllBirthdays}>
+        Delete all birthdays
+      </button>
     </div>
   );
 };
