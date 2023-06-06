@@ -39,6 +39,8 @@ const App = () => {
     localStorage.setItem("birthdays", JSON.stringify([]));
   };
 
+  // These functions are for testing purposes
+
   const handleGoogleLogin = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -73,6 +75,7 @@ const App = () => {
       <button className="m-4 hover:bg-red-500" onClick={deleteAllBirthdays}>
         Delete all birthdays
       </button>
+      {/* These buttons are for testing purposes */}
       <button className="m-4 hover:bg-blue-500" onClick={handleGoogleLogin}>
         Login with Google
       </button>
