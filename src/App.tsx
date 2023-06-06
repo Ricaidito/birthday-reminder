@@ -2,6 +2,12 @@ import { useState, useEffect } from "react";
 import Birthday from "./models/Birthday";
 import BirthdayList from "./components/birthday-list/BirthdayList";
 import AddBirthday from "./components/add-birthday/AddBirthday";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 import "./App.css";
 
 const App = () => {
@@ -33,6 +39,29 @@ const App = () => {
     localStorage.setItem("birthdays", JSON.stringify([]));
   };
 
+  const handleGoogleLogin = () => {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const handleSignOut = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        console.log("User signed out");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <h1>Birthday Reminder 🎂</h1>
@@ -43,6 +72,12 @@ const App = () => {
       />
       <button className="m-4 hover:bg-red-500" onClick={deleteAllBirthdays}>
         Delete all birthdays
+      </button>
+      <button className="m-4 hover:bg-blue-500" onClick={handleGoogleLogin}>
+        Login with Google
+      </button>
+      <button className="m-4 hover:bg-orange-500" onClick={handleSignOut}>
+        Sign out
       </button>
     </div>
   );
