@@ -19,19 +19,22 @@ const BirthdayCard = ({
   };
 
   return (
-    <div className="bd-card">
+    <div className="bd-card relative">
       <p>
-        #{number} <strong>{birthday.personName}</strong>
+        <strong>{birthday.personName}</strong>
       </p>
       <p className="bd-para margin">
         <strong>Birthday:</strong> {formatDate(birthday.date)}
       </p>
-      <button
-        className="bd-btn hover:bg-red-500"
-        onClick={() => deleteBirthdaybyId(birthday.id)}
-      >
-        Delete
-      </button>
+      <p className="absolute pos opacity-25">#{number}</p>
+      <div className="absolute trash-pos">
+        <button
+          className="bd-btn"
+          onClick={() => deleteBirthdaybyId(birthday.id)}
+        >
+          🗑
+        </button>
+      </div>
     </div>
   );
 };
