@@ -36,15 +36,22 @@ const AddBirthday = ({ saveBirthday }: AddBirthdayProps) => {
           <label htmlFor="personName">
             <strong>Name: </strong>
           </label>
-          <input type="text" id="personName" required ref={personNameRef} />
+          <input
+            className="placeholder-p-2 p-2 placeholder-white"
+            type="text"
+            id="personName"
+            placeholder="The person's name..."
+            required
+            ref={personNameRef}
+          />
         </div>
         <div className="p-2">
           <label htmlFor="date">
             <strong>Date: </strong>
           </label>
-          <input type="date" id="date" required ref={dateRef} />
+          <input className="p-2" type="date" id="date" required ref={dateRef} />
         </div>
-        <button className="m-2 hover:bg-green-600">Add</button>
+        <button className="m-2 hover:bg-green-600">Add birthday</button>
       </form>
     </div>
   );

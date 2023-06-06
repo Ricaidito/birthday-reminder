@@ -4,12 +4,19 @@ import "./BirthdayCard.css";
 interface BirthdayCardProps {
   birthday: Birthday;
   deleteBirthdaybyId: (birthdayId: string) => void;
+  number: number;
 }
 
-const BirthdayCard = ({ birthday, deleteBirthdaybyId }: BirthdayCardProps) => {
+const BirthdayCard = ({
+  birthday,
+  deleteBirthdaybyId,
+  number,
+}: BirthdayCardProps) => {
   return (
     <div className="bd-card">
-      <p className="bd-para bd-name">{birthday.personName}</p>
+      <p>
+        #{number} <strong>{birthday.personName}</strong>
+      </p>
       <p className="bd-para margin">
         <strong>Birthday:</strong> {birthday.date}
       </p>
