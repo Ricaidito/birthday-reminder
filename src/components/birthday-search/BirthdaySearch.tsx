@@ -11,7 +11,7 @@ const BirthdaySearch = ({ searchTerm, setSearchTerm }: BirthdaySearchProps) => {
   return (
     <div>
       <input
-        className="placeholder-p-2 w-full p-2 placeholder-white"
+        className="bg-set placeholder-p-2 w-full p-2 placeholder-white placeholder-opacity-25 rounded-lg"
         type="search"
         placeholder="Search by name..."
         value={searchTerm}
