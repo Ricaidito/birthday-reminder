@@ -20,14 +20,12 @@ const BirthdayCard = ({
 
   return (
     <div className="bd-card relative">
-      <div className="was">
       <p>
         <strong>{birthday.personName}</strong>
       </p>
       <p className="bd-para margin">
         <strong>Birthday:</strong> {formatDate(birthday.date)}
       </p>
-      </div>
       <p className="absolute pos opacity-25">#{number}</p>
       <div className="absolute trash-pos">
         <button
