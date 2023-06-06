@@ -17,5 +17,17 @@
 }
 
 .bd-btn {
+  padding: 0;
+  background-color: unset;
   transition: 0.25s;
+}
+
+.pos {
+  top: 5px;
+  right: 10px;
+}
+
+.trash-pos {
+  right: 5px;
+  top: 45px
 }

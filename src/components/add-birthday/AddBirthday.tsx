@@ -32,26 +32,28 @@ const AddBirthday = ({ saveBirthday }: AddBirthdayProps) => {
   return (
     <div className="p-3">
       <form onSubmit={handleSubmit}>
-        <div className="form-name p-2">
-          <label htmlFor="personName">
-            <strong>Name: </strong>
-          </label>
-          <input
-            className="placeholder-p-2 p-2 placeholder-white"
-            type="text"
-            id="personName"
-            placeholder="The person's name..."
-            required
-            ref={personNameRef}
-          />
+        <div className="flex flex-col items-center">
+          <div className="form-name p-2">
+            <input
+              className="placeholder-p-2 p-2 placeholder-white bg-set rounded"
+              type="text"
+              id="personName"
+              placeholder="Name..."
+              required
+              ref={personNameRef}
+            />
+          </div>
+          <div className="p-2">
+            <input 
+              className="p-2 bg-set rounded" 
+              type="date" id="date" 
+              required 
+              ref={dateRef} 
+              style={{width: "13.4rem"}}
+            />
+          </div>
         </div>
-        <div className="p-2">
-          <label htmlFor="date">
-            <strong>Date: </strong>
-          </label>
-          <input className="p-2" type="date" id="date" required ref={dateRef} />
-        </div>
-        <button className="m-2 hover:bg-green-600">Add birthday</button>
+        <button className="w-25 m-2 hover:bg-green-600">Add</button>
       </form>
     </div>
   );
